@@ -1,0 +1,23 @@
+{
+  "name": "wot-pi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "wotServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashfaq92/wot-pi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashfaq92/wot-pi/issues"
+  },
+  "homepage": "https://github.com/ashfaq92/wot-pi#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.2.1"
+  }
+}

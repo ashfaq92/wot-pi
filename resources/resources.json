@@ -1,0 +1,45 @@
+{
+    "pi": {
+        "name": "WoT Pi",
+        "description": "a simple wot-connected raspberry pi 3 for the WoT book.",
+        "port": 8484,
+        "sensors": {
+            "temperature": {
+                "name": "Temperature sensor",
+                "description": "an ambient temperature sensor.",
+                "unit": "celsius",
+                "value": 0,
+                "gpio": 12
+            },
+            "humidity": {
+                "name": "humidity sensor",
+                "description": "an ambient humidity sensor",
+                "unit": "%",
+                "value": 0,
+                "gpio": 12
+            },
+            "pir": {
+                "name": "passive infrared",
+                "description": "a passive infrared sensor. When 'true' someone is present.",
+                "unit": "boolean",
+                "value": true,
+                "gpio": 17
+            }
+        },
+        "actuators": {
+            "leds": {
+                "1": {
+                    "name": "LED 1",
+                    "value": false,
+                    "gpio": 4
+                },
+                "2": {
+                    "name": "LED 2",
+                    "value": false,
+                    "gpio": 9
+                }
+            }
+        }
+    }
+
+}
