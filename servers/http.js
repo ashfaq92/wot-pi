@@ -1,11 +1,14 @@
+const bodyParser = require('body-parser')
 const express = require('express')
 const actuatorsRoutes = require('./../routes/actuators')
 const sensorsRoutes = require('./../routes/sensors')
-const resources = require('./../resources/model')
 const cors = require('cors')
 const converter = require('./../middleware/converter')
 
 const app = express()
+
+app.use(bodyParser.json())
+
 app.use(cors())
 
 

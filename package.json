@@ -22,8 +22,10 @@
     "json2html": "^0.0.8",
     "msgpack5": "^6.0.2",
     "node-fetch": "^3.3.2",
-    "node-json2html": "^3.3.3",
-    "pigpio-client": "^1.5.2",
+    "node-json2html": "^3.3.3"
+    
+  },
+  "optionalDependencies": {
     "rpi-ws281x-native": "^1.0.4",
     "spi-device": "^3.1.2"
   }

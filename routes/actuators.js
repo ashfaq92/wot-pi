@@ -17,6 +17,12 @@ router.route('/led').get(function (req, res, next) { // #C
 router.route('/led/value').get(function (req, res, next) { // #C
     req.result = model.pi.actuators.led.value
     next()
+}).put((req, res, next) => {
+    const rgbLed = model.pi.actuators.led
+    rgbLed.value = req.body.value
+    console.info(`Changed LED ${rgbLed.name} value to ${rgbLed.value}`)
+    req.result = rgbLed
+    next()
 })
 
 // router.route('/leds/:id').get(function (req, res, next) { //#D
