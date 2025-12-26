@@ -27,17 +27,11 @@
             }
         },
         "actuators": {
-            "leds": {
-                "1": {
-                    "name": "LED 1",
-                    "value": false,
-                    "gpio": 4
-                },
-                "2": {
-                    "name": "LED 2",
-                    "value": false,
-                    "gpio": 9
-                }
+            "led": {
+                "name": "RGB LED",
+                "unit": "rgb",
+                "value": {"r":0, "g":0, "b":0 },
+                "gpio": 4
             }
         }
     }

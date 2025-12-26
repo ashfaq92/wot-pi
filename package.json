@@ -18,6 +18,10 @@
   "homepage": "https://github.com/ashfaq92/wot-pi#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "node-fetch": "^3.3.2",
+    "pigpio-client": "^1.5.2",
+    "rpi-ws281x-native": "^1.0.4",
+    "spi-device": "^3.1.2"
   }
 }
