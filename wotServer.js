@@ -14,11 +14,11 @@ const weatherPlugin = require('./plugins/external/weatherPlugin')
 rgbLed.start({ simulate: false })
 
 // Start weather plugin (simulated or real, with desired frequency)
-weatherPlugin.start({ simulate: true, frequency: 2000 })
+// weatherPlugin.start({ simulate: true, frequency: 2000 })
 
 // Optional: Monitor weather and set LED based on temperature
-const tempMonitoring = require('./apps/temperatureMonitoring')
-tempMonitoring.update({frequency: 1000})
+// const tempMonitoring = require('./apps/temperatureMonitoring')
+// tempMonitoring.update({frequency: 1000})
 
 // Start HTTP server
 const server = httpServer.listen(resources.pi.port, () => {
