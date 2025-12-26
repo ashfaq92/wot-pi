@@ -2,18 +2,21 @@
 
 const express = require('express')
 const router = express.Router()
-const resources = require('./../resources/model')
+const model = require('./../resources/model')
 
 router.route('/').get(function (req, res, next) { // #A
-    res.send(resources.pi.actuators); // #B
+    req.result = model.pi.actuators
+    next()
 });
 
 router.route('/led').get(function (req, res, next) { // #C
-    res.send(resources.pi.actuators.led);
+    req.result = model.pi.actuators.led
+    next()
 })
 
 router.route('/led/value').get(function (req, res, next) { // #C
-    res.send(resources.pi.actuators.led.value);
+    req.result = model.pi.actuators.led.value
+    next()
 })
 
 // router.route('/leds/:id').get(function (req, res, next) { //#D
