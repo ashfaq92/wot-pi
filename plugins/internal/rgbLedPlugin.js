@@ -1,19 +1,22 @@
-const resources = require('./../../resources/model')
+const model = require('./../../resources/model')
 
-const rgbLed = resources.pi.actuators.led
+const rgbLedModel = model.pi.actuators.led
 
 let spi = null
 let simulate = false
 
 const SPI_SPEED = 6400000
-const pluginName = rgbLed.name
+const pluginName = rgbLedModel.name
 
 exports.start = params => {
     simulate = !!params?.simulate
-
     if (!simulate) {
         connectHardware()
     }
+
+    model.on('led:changed', value => {
+        exports.setColor(value.r, value.g, value.b)
+    })
 
     console.info('%s plugin started (%s)', pluginName, simulate ? 'simulated' : 'hardware')
 }
@@ -39,7 +42,7 @@ exports.setColor = (r, g, b) => {
     }
 
     writeColor(r, g, b)
-    rgbLed.value = { r, g, b }
+    rgbLedModel.value = { r, g, b }
 
 }
 

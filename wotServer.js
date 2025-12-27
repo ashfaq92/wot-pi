@@ -1,4 +1,5 @@
 const httpServer = require('./servers/http')
+const wsServer = require('./servers/websockets')
 const resources = require('./resources/model')
 
 const rgbLed = require('./plugins/internal/rgbLedPlugin')
@@ -11,7 +12,7 @@ const weatherPlugin = require('./plugins/external/weatherPlugin')
 
 
 // Start LED plugin (simulation false, hardware mode)
-rgbLed.start({ simulate: false })
+rgbLed.start({ simulate: true })
 
 // Start weather plugin (simulated or real, with desired frequency)
 // weatherPlugin.start({ simulate: true, frequency: 2000 })
@@ -22,5 +23,7 @@ rgbLed.start({ simulate: false })
 
 // Start HTTP server
 const server = httpServer.listen(resources.pi.port, () => {
-    console.info(`Behold! Your WoT Pi has awoken from its digital slumber on port ${resources.pi.port} 🐍💻`)
+    console.info(`HTTP server started on port: ${resources.pi.port}`)
+    wsServer.listen(server)
+    console.info(`Your WoT Pi is up and running on port ${resources.pi.port}`)
 })
