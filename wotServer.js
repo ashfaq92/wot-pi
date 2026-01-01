@@ -21,6 +21,13 @@ rgbLed.start({ simulate: true })
 // const tempMonitoring = require('./apps/temperatureMonitoring')
 // tempMonitoring.update({frequency: 1000})
 
+
+// External Plugins
+// const coapPlugin = require('./plugins/external/coapPlugin');
+// coapPlugin.start({ 'simulate': false, 'frequency': 10000 });
+// const coapPlugin = require('./plugins/external/coapPlugin')
+// coapPlugin.start({'simulate': true, 'frequency':1000})
+
 // Start HTTP server
 const server = httpServer.listen(resources.pi.port, () => {
     console.info(`HTTP server started on port: ${resources.pi.port}`)

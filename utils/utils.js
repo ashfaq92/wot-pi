@@ -1,11 +1,11 @@
 const resources = require('./../resources/model');
 
-exports.addDevice = (id, name, description, sensors, actuators) => {
+exports.addDevice = (id, deviceName, description, sensors, actuators) => {
     if (!resources.things) {
         resources.things = {}
     }
     resources.things[id] = {
-        'name': name,
+        'name': deviceName,
         'description': description,
         'sensors': sensors,
         'actuators': actuators
